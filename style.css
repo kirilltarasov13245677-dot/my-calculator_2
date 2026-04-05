@@ -1,0 +1,265 @@
+/* Базовые стили (для всех устройств) */
+body {
+    background-color: #202020;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== ШАПКА (адаптивная) ===== */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    gap: 30px;
+    background-color: #333;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+}
+
+.header-links {
+    color: antiquewhite;
+    text-decoration: none;
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+.header-links:hover {
+    opacity: 70%;
+}
+
+/* ===== КАЛЬКУЛЯТОР (адаптивный) ===== */
+.calc {
+    margin: 30px auto;
+    width: 300px;
+    max-width: 90%;
+    height: auto;
+    min-height: 500px;
+    border: 2px solid wheat;
+    border-radius: 20px;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial;
+    padding: 18px;
+    box-shadow: 4px 4px 4px #4f4f4f;
+}
+
+.calc-screen {
+    height: auto;
+    min-height: 100px;
+    padding: 10px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+    margin-bottom: 15px;
+}
+
+.calc-screen p {
+    text-align: right;
+    font-size: 3rem;
+    margin: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    max-width: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    justify-items: center;
+    align-items: center;
+}
+
+.btn {
+    width: 100%;
+    max-width: 70px;
+    aspect-ratio: 1 / 1;
+    background: #333;
+    border-radius: 50%;
+    text-align: center;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Специально для нуля */
+.btn.zero {
+    grid-column: span 2;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 40px;
+    aspect-ratio: auto;
+    padding: 15px 0;
+}
+
+/* Кнопка равно */
+.btn.equal {
+    aspect-ratio: auto;
+    padding: 15px 0;
+}
+
+.btn:hover {
+    filter: brightness(120%);
+}
+
+.btn:active {
+    filter: brightness(90%);
+}
+
+.btn.bg-grey {
+    background-color: #a6a6a6;
+}
+
+.btn.bg-orange {
+    background-color: #ff9501;
+}
+
+/* ===== ПОДВАЛ (адаптивный) ===== */
+.footer {
+    margin-top: auto;
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    gap: 20px;
+    background-color: #333;
+    border-radius: 15px;
+    margin: 10px;
+}
+
+.prav {
+    color: wheat;
+    font-size: 16px;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.icons img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== АДАПТАЦИЯ ПОД ТЕЛЕФОН REDMI NOTE 13 PRO (393px) ===== */
+@media (max-width: 480px) {
+    .header {
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .logo {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .header-links {
+        font-size: 16px;
+    }
+    
+    .calc {
+        margin: 20px auto;
+        padding: 12px;
+        width: 90%;
+    }
+    
+    .calc-screen p {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        font-size: 1.2rem;
+    }
+    
+    .btn.zero {
+        padding: 10px 0;
+    }
+    
+    .btn.equal {
+        padding: 10px 0;
+    }
+    
+    .prav {
+        font-size: 12px;
+    }
+    
+    .wrapper {
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .icons img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ===== АДАПТАЦИЯ ПОД ПЛАНШЕТЫ И НЕБОЛЬШИЕ ЭКРАНЫ (600-900px) ===== */
+@media (min-width: 600px) and (max-width: 1024px) {
+    .calc {
+        width: 400px;
+    }
+    
+    .btn {
+        font-size: 1.8rem;
+    }
+    
+    .header-links {
+        font-size: 28px;
+    }
+}
+
+/* ===== АДАПТАЦИЯ ПОД ШКОЛЬНУЮ ЭЛЕКТРОННУЮ ДОСКУ (1366px и выше) ===== */
+@media (min-width: 1200px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .calc {
+        width: 450px;
+        margin: 40px auto;
+    }
+    
+    .btn {
+        font-size: 1.8rem;
+    }
+    
+    .calc-screen p {
+        font-size: 3.5rem;
+    }
+    
+    .header {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 15px 40px;
+    }
+    
+    .header-links {
+        font-size: 32px;
+    }
+    
+    .footer .wrapper {
+        max-width: 1200px;
+        margin: 20px auto;
+    }
+}
+
